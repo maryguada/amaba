@@ -103,7 +103,7 @@
                 
                 <a href="{% provider_login_url "facebook" method="js_sdk" %}"><img src = "{% static 'projapp/images/facebook.png' %}" alt = "facebook"></a>
                 <a href=""><img src = "{% static 'projapp/images/twitter.png' %}" alt = "twitter"></a>
-                <a href=""><img src = "{% static 'projapp/images/google.png' %}" alt = "google"></a>
+                <a href="{% provider_login_url "google" method="js_sdk" %}"><img src = "{% static 'projapp/images/google.png' %}" alt = "google"></a>
 
             </div>
         </div>
