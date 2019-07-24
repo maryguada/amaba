@@ -1,3 +1,5 @@
+{% load socialaccount %}
+{% providers_media_js %}
 <!DOCTYPE html>
 <html lang="en">
     <head> <!-- HEADER-->
@@ -99,7 +101,7 @@
             <div class="social">
 
                 
-                <a href=""><img src = "{% static 'projapp/images/facebook.png' %}" alt = "facebook"></a>
+                <a href="{% provider_login_url "facebook" method="js_sdk" %}"><img src = "{% static 'projapp/images/facebook.png' %}" alt = "facebook"></a>
                 <a href=""><img src = "{% static 'projapp/images/twitter.png' %}" alt = "twitter"></a>
                 <a href=""><img src = "{% static 'projapp/images/google.png' %}" alt = "google"></a>
 

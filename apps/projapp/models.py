@@ -39,12 +39,3 @@ class Account(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = AccountManager()
-
-class Item(models.Model):
-    title = models.CharField(max_length=255)
-    description=models.TextField()
-    uploaded_by=models.ForeignKey(Account,related_name="jobs_uploaded")
-    users_who_add=models.ManyToManyField(Account,related_name="added_jobs")
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    objects = AccountManager()
