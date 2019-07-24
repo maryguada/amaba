@@ -8,6 +8,10 @@ def index(request):
 #############################login###############################
 def login(request): 
     return render(request, "projapp/login.html")
+#############################logout###############################
+def logout(request):
+    del request.session['user']
+    return redirect("/")
 #############################login_process###############################
 def login_process(request):
         user = Account.objects.filter(email=request.POST['email'])
