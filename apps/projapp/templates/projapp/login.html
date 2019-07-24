@@ -54,8 +54,10 @@
         margin-left: 35px;
         }
         .social{
-        margin-left: 490px;
+        margin-left: 35px;
         margin-top: 35px;
+        display: inline-block;
+        vertical-align: top;
         }
         .mx-auto p{
         margin-left: 180px;
@@ -70,18 +72,17 @@
                 <h1>Amaba</h1>
             </div>
             <div class="mx-auto" style="width: 380px;">
-                <a href="/register"> <h1> REGISTER   </h1> </a>   <h1> | SIGN IN</h1>
-                <form class="px-6 py-3">
-        
-    
+                <a href="/register"> <h1> REGISTER</h1> </a><h1> | SIGN IN</h1>
+                <form class="px-6 py-3" method="post">
+
                     <div class="form-group">
                     <label for="exampleDropdownFormEmail">Email address</label>
-                    <input type="email" class="form-control" id="exampleDropdownFormEmail" placeholder="Enter Email Address">
+                    <input type="email" name="email" class="form-control" id="exampleDropdownFormEmail" placeholder="Enter Email Address">
                     </div>
 
                     <div class="form-group">
                     <label for="exampleDropdownFormPassword">Password</label>
-                    <input type="password" class="form-control" id="exampleDropdownFormPassword" placeholder="Password">
+                    <input type="password" name="password" class="form-control" id="exampleDropdownFormPassword" placeholder="Password">
                     </div>
                     
                     <div class="form-check">
@@ -96,16 +97,17 @@
                 <hr>
                 <p>or</p>
 
-            </div>
-            
-            <div class="social">
+                <div class="social">
 
                 
-                <a href="{% provider_login_url "facebook" method="js_sdk" %}"><img src = "{% static 'projapp/images/facebook.png' %}" alt = "facebook"></a>
-                <a href=""><img src = "{% static 'projapp/images/twitter.png' %}" alt = "twitter"></a>
-                <a href="{% provider_login_url "google" method="js_sdk" %}"><img src = "{% static 'projapp/images/google.png' %}" alt = "google"></a>
-
+                    <a href="{% provider_login_url "facebook" method="js_sdk" %}"><img src = "{% static 'projapp/images/facebook.png' %}" alt = "facebook"></a>
+                    <a href=""><img src = "{% static 'projapp/images/twitter.png' %}" alt = "twitter"></a>
+                    <a href="{% provider_login_url "google" method="js_sdk" %}"><img src = "{% static 'projapp/images/google.png' %}" alt = "google"></a>
+    
+                </div>
             </div>
+            
+            
         </div>
         <!-- This is the jQuery's slim build section-->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
