@@ -33,10 +33,10 @@
 
         .header img{
         display: inline-block;
-        /* vertical-align: top; */
-        width: 45px;
-        height: 45px;
-        margin-top: -65px;
+        vertical-align: top;
+        width: 55px;
+        height: 55px;
+        margin-top: -50px;
         
         }
         .mx-auto a{
@@ -72,7 +72,7 @@
                 <h1>Amaba</h1>
             </div>
             <div class="mx-auto" style="width: 380px;">
-                <a href="/register"> <h1> REGISTER</h1> </a><h1> | SIGN IN</h1>
+                <h1>  SIGN IN</h1> <a href="/register"> <h1>| REGISTER</h1> </a>
                 <form class="px-6 py-3" method="post">
 
                     <div class="form-group">
@@ -98,16 +98,11 @@
                 <p>or</p>
 
                 <div class="social">
-
-                
                     <a href="{% provider_login_url "facebook" method="js_sdk" %}"><img src = "{% static 'projapp/images/facebook.png' %}" alt = "facebook"></a>
                     <a href=""><img src = "{% static 'projapp/images/twitter.png' %}" alt = "twitter"></a>
                     <a href="{% provider_login_url "google" method="js_sdk" %}"><img src = "{% static 'projapp/images/google.png' %}" alt = "google"></a>
-    
                 </div>
             </div>
-            
-            
         </div>
         <!-- This is the jQuery's slim build section-->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

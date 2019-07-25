@@ -31,10 +31,10 @@
 
         .header img{
         display: inline-block;
-        /* vertical-align: top; */
-        width: 45px;
-        height: 45px;
-        margin-top: -65px;
+        vertical-align: top;
+        width: 55px;
+        height: 55px;
+        margin-top: -50px;
         
         }
         .mx-auto a{
@@ -52,8 +52,10 @@
         margin-left: 35px;
         }
         .social{
-        margin-left: 490px;
+          margin-left: 35px;
         margin-top: 35px;
+        display: inline-block;
+        vertical-align: top;
         }
         .mx-auto p{
         margin-left: 180px;
@@ -68,7 +70,7 @@
                 <h1>Amaba</h1>
             </div>
             <div class="mx-auto" style="width: 380px;">
-                <a href="/login"> <h1> SIGN IN   </h1> </a>   <h1> | REGISTER</h1> 
+              <h1> REGISTER</h1> <a href="/login"> <h1>| SIGN IN   </h1> </a>  
                   <h2>                   </h2>
                 <form class="px-6 py-3" method="post">
 
@@ -103,16 +105,11 @@
                 <div class="dropdown-divider"></div>
                 <hr>
                 <p>or</p>
-
-            </div>
-            
-            <div class="social">
-
-                
-                <a href=""><img src = "{% static 'projapp/images/facebook.png' %}" alt = "facebook"></a>
-                <a href=""><img src = "{% static 'projapp/images/twitter.png' %}" alt = "google"></a>
-                <a href=""><img src = "{% static 'projapp/images/google.png' %}" alt = "twitter"></a>
-
+                <div class="social">
+                  <a href=""><img src = "{% static 'projapp/images/facebook.png' %}" alt = "facebook"></a>
+                  <a href=""><img src = "{% static 'projapp/images/twitter.png' %}" alt = "google"></a>
+                  <a href=""><img src = "{% static 'projapp/images/google.png' %}" alt = "twitter"></a>
+              </div>
             </div>
         </div>
         <!-- This is the jQuery's slim build section-->
