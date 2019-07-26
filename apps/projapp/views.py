@@ -22,11 +22,11 @@ def login_process(request):
             else:
                 print("Wrong password!")
                 messages.warning(request, 'Login failed.')
-                return redirect ("/")
+                return redirect ("/login")
         else:
             print("No such username!")
             messages.warning(request,'Login failed.')
-            return redirect ("/")
+            return redirect ("/login")
 #############################register###############################
 def register(request): 
     return render(request, "projapp/register.html")
@@ -38,12 +38,12 @@ def register_process(request):
         if len(errors)>0:
             for tag,error in errors.items():
                 messages.error(request,error, extra_tags=tag)
-            return redirect("/")
+            return redirect("/register")
         else:
             first_name=request.POST["first_name"]
             last_name=request.POST["last_name"]
             email=request.POST["email"]
-            password=bcrypt.hashpw(request.POST["password"].encode(),bcrypt.gensalt())
+            password=bcrypt.hashpw(request.POST["password"].encode(),bcrypt.gensalt()).decode()
             print(password)
             new_user=Account.objects.create(first_name=first_name,last_name=last_name,email=email,password=password)
             request.session["user"]=new_user.id
@@ -51,10 +51,7 @@ def register_process(request):
             return redirect("/success")
 #############################success###############################
 def success(request):
-    context={
-        "all_jobs":Job.objects.all(),
-        "current_user":Account.objects.get(id=request.session['user']),
-        "added_jobs":Job.objects.filter(users_who_add=Account.objects.get(id=request.session['user'])),
-        "not_added_jobs":Job.objects.exclude(users_who_add=Account.objects.get(id =request.session['user'])),
-    }
-    return render(request,"projapp/success.html",context)
+    return render(request,"projapp/success.html")
+#############################create_product###############################
+def create(request):
+    return redirect("/success")

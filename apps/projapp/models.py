@@ -23,12 +23,15 @@ class AccountManager(models.Manager):
         print("Inside Acountmanager Class ending")
         return errors
 
+class ItemManager(models.Manager):
     def item_validator(self,postData):
         errors={}
         if len(postData['title'])<3:
             errors["title"]="Item title must consist of at least 3 characters!"
-        if len(postData['dscription'])<1:
+        if len(postData['description'])<1:
             errors["description"]="Description of item required"
+        if len(postData['price'])<1:
+            errors["price"]="Description of item required"
         return errors
 
 class Account(models.Model):
@@ -39,3 +42,13 @@ class Account(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = AccountManager()
+
+class Item(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    price = models.IntegerField()
+    uploaded_by = models.ForeignKey(Account, related_name="items",on_delete=models.CASCADE)          # ONE TO MANY RELATIONS HERE
+    accounts_who_like = models.ManyToManyField(Account, related_name="liked_items")     # MANY TO MANY RELATIONS HERE
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    objects = ItemManager()

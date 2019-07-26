@@ -87,20 +87,18 @@
       <h1>Amaba</h1>
     </div>
     <div class="mx-auto" style="width: 380px;">
-      <h1> REGISTER</h1> <a href="/login">
-        <h1>| SIGN IN </h1>
-      </a>
+      <h1> Upload product</h1> 
       <h2> </h2>
-      <form action="/register_process"class="px-6 py-3" method="post">
+      <form action="/create_product"class="px-6 py-3" method="post">
         {% csrf_token %}
         <div class="form-group">
-          <label for="exampleDropdownFormFirstName">First Name</label>
-          <input type="text" name="first_name" class="form-control" id="exampleDropdownFormFirstName"
-            placeholder="Enter First Name">
+          <label for="exampleDropdownFormFirstName">Title</label>
+          <input type="text" name="title" class="form-control" id="exampleDropdownFormFirstName"
+            placeholder="Enter title of product">
           {% if messages %}
           <div class="message">
             {% for message in messages %}
-            {% ifequal message.tags 'first_name error' %}
+            {% ifequal message.tags 'title error' %}
             <p>{{ message }}</p>
             {% endifequal %}
             {% endfor %}
@@ -108,13 +106,13 @@
           {% endif %}
         </div>
         <div class="form-group">
-          <label for="exampleDropdownFormLastName">Last Name</label>
-          <input type="text" name="last_name" class="form-control" id="exampleDropdownFormLastName"
-            placeholder="Enter Last Name">
+          <label for="exampleDropdownFormLastName">Price</label>
+          <input type="text" name="price" class="form-control" id="exampleDropdownFormLastName"
+            placeholder="Enter price">
           {% if messages %}
           <div class="message">
             {% for message in messages %}
-            {% ifequal message.tags 'last_name error' %}
+            {% ifequal message.tags 'price error' %}
             <p>{{ message }}</p>
             {% endifequal %}
             {% endfor %}
@@ -122,56 +120,22 @@
           {% endif %}
         </div>
         <div class="form-group">
-          <label for="exampleDropdownFormEmail">Email address</label>
-          <input type="email" name="email" class="form-control" id="exampleDropdownFormEmail"
-            placeholder="Enter Email Address">
+          <label for="exampleDropdownFormEmail">Description</label>
+          <input type="email" name="description" class="form-control" id="exampleDropdownFormEmail"
+            placeholder="Enter description">
           {% if messages %}
           <div class="message">
             {% for message in messages %}
-            {% ifequal message.tags 'email error' %}
+            {% ifequal message.tags 'description error' %}
             <p>{{ message }}</p>
             {% endifequal %}
             {% endfor %}
           </div>
           {% endif %}
         </div>
-        <div class="form-group">
-          <label for="exampleDropdownFormPassword">Password</label>
-          <input type="password" name="password" class="form-control" id="exampleDropdownFormPassword"
-            placeholder="Password">
-          {% if messages %}
-          <div class="message">
-            {% for message in messages %}
-            {% ifequal message.tags 'password error' %}
-            <p>{{ message }}</p>
-            {% endifequal %}
-            {% endfor %}
-          </div>
-          {% endif %}
         </div>
-        <div class="form-group">
-          <label for="exampleDropdownFormCPassword">Confirm Password</label>
-          <input type="password" name="confirm_password" class="form-control" id="exampleDropdownFormCPassword"
-            placeholder=" Confirm Password">
-        </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="dropdownCheck">
-          <label class="form-check-label" for="dropdownCheck">
-            Remember me
-          </label><br><br>
-        </div>
-        <button type="submit" class="btn btn-primary">Register</button>
+        <button type="submit" class="btn btn-primary">Add</button>
       </form>
-      <div class="dropdown-divider"></div>
-      <hr>
-      <p>or</p>
-      <div class="social">
-        <a href=""><img src="{% static 'projapp/images/facebook.png' %}" alt="facebook"></a>
-        <a href=""><img src="{% static 'projapp/images/twitter.png' %}" alt="google"></a>
-        <a href=""><img src="{% static 'projapp/images/google.png' %}" alt="twitter"></a>
-      </div>
-    </div>
-  </div>
   <!-- This is the jQuery's slim build section-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

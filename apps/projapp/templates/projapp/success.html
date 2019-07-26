@@ -12,6 +12,7 @@
         href="C:\Users\mergun\Documents\CODING DOJO\Projects\Ecommerce\static\amaba\style.css">
     <link rel="stylesheet" type="text/css"
         href="C:\Users\Lenovo\Desktop\Python_stack\Django\django_full_stack\group_project\apps\projapp\static\projapp\css\style.css">
+    <link rel="stylesheet" type="text/css" href="file:///Users/howardchen/Desktop/group_project/apps/projapp/static/">
     {% load static %}
     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -150,8 +151,10 @@
             <a href="/"><img src="{% static 'projapp/images/logoAma.png' %}" alt="logo"></a>
             <h1>Amaba</h1>
             <div class="header_right">
-                <a href="/login"> <img src="{% static 'projapp/images/user.png' %}" alt="user"></a> <a href="/login">
-                    <img src="{% static 'projapp/images/shopping_cart.png' %}" alt="user"> </a>
+                <a href="/login"> <img src="{% static '/projapp/images/user.png' %}" alt="user"></a>
+                 <a href="/login"><img src="{% static '/projapp/images/shopping_cart.png' %}" alt="shopping_cart"></a>
+                 <a href="/create"><img src="{% static '/projapp/images/add_circle.png' %}" alt="create"></a>
+
             </div>
         </div>
         
@@ -182,9 +185,6 @@
                     </div>
                 </div>
             </div> -->
-           
-        
-
     </div>
 
 
@@ -193,7 +193,7 @@
             <div class="col-sm-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading"></div>
-                    <div class="panel-body"><img src="man.jpg" class="img-responsive" style="width:100%" alt="Image">
+                    <div class="panel-body"><img src="{% static '/projapp/images/man.jpg' %}" class="img-responsive" style="width:100%" alt="Image">
                     </div>
                     <div class="panel-footer">
                         <h6> Men shirt</h6>
@@ -207,7 +207,7 @@
             <div class="col-sm-4">
                 <div class="panel panel-danger">
 
-                    <div class="panel-body"><img src="woman.jpg" class="img-responsive" style="width:100%" alt="Image">
+                    <div class="panel-body"><img src="{% static '/projapp/images/woman.jpg' %}" class="img-responsive" style="width:100%" alt="Image">
                     </div>
                     <div class="panel-footer">
                         <h6> Women v-neck</h6>
@@ -221,7 +221,7 @@
             <div class="col-sm-4">
                 <div class="panel panel-success">
                     <div class="panel-heading"></div>
-                    <div class="panel-body"><img src="tshirt.jpg" class="img-responsive" style="width:100%" alt="Image">
+                    <div class="panel-body"><img src="{% static '/projapp/images/tshirt.jpg' %}" class="img-responsive" style="width:100%" alt="Image">
                     </div>
                     <div class="panel-footer">
                         <h6> Women tshirt</h6>
@@ -238,7 +238,7 @@
                 <div class="col-sm-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading"></div>
-                        <div class="panel-body"><img src="sunglass.jpg" class="img-responsive" style="width:100%"
+                        <div class="panel-body"><img src="{% static '/projapp/images/sunglass.jpg' %}" class="img-responsive" style="width:100%"
                                 alt="Image"></div>
                         <div class="panel-footer">
                             <h6> Men sunglass</h6>
@@ -252,7 +252,7 @@
                 <div class="col-sm-4">
                     <div class="panel panel-danger">
 
-                        <div class="panel-body"><img src="backpack.jpg" class="img-responsive" style="width:100%"
+                        <div class="panel-body"><img src="{% static '/projapp/images/backpack.jpg' %}" class="img-responsive" style="width:100%"
                                 alt="Image"></div>
                         <div class="panel-footer">
                             <h6> Women backpack</h6>
@@ -266,7 +266,7 @@
                 <div class="col-sm-4">
                     <div class="panel panel-success">
                         <div class="panel-heading"></div>
-                        <div class="panel-body"><img src="jacket.jpg" class="img-responsive" style="width:100%"
+                        <div class="panel-body"><img src="{% static '/projapp/images/jacket.jpg' %}" class="img-responsive" style="width:100%"
                                 alt="Image"></div>
                         <div class="panel-footer">
                             <h6> Jeans jacket</h6>
@@ -283,7 +283,7 @@
                     <div class="col-sm-4">
                         <div class="panel panel-primary">
                             <div class="panel-heading"></div>
-                            <div class="panel-body"><img src="boot.jpg" class="img-responsive" style="width:100%"
+                            <div class="panel-body"><img src="{% static '/projapp/images/boot.jpg' %}" class="img-responsive" style="width:100%"
                                     alt="Image"></div>
                             <div class="panel-footer">
                                 <h6> Ugly boot</h6>
@@ -297,7 +297,7 @@
                     <div class="col-sm-4">
                         <div class="panel panel-danger">
 
-                            <div class="panel-body"><img src="shoes.jpg" class="img-responsive" style="width:100%"
+                            <div class="panel-body"><img src="{% static '/projapp/images/shoes.jpg' %}" class="img-responsive" style="width:100%"
                                     alt="Image"></div>
                             <div class="panel-footer">
                                 <h6> leather shoes</h6>
@@ -311,7 +311,7 @@
                     <div class="col-sm-4">
                         <div class="panel panel-success">
                             <div class="panel-heading"></div>
-                            <div class="panel-body"><img src="backpack.jpg" class="img-responsive" style="width:100%"
+                            <div class="panel-body"><img src="{% static '/projapp/images/backpack.jpg' %}" class="img-responsive" style="width:100%"
                                     alt="Image"></div>
                             <div class="panel-footer">
                                 <h6> Backpack</h6>
