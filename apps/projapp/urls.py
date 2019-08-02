@@ -9,13 +9,13 @@ urlpatterns = [
     url(r'^register_process$', views.register_process),
     url(r'^success$', views.success),
     url(r'^create_product$', views.create),
-<<<<<<< HEAD
     url(r'^menshirt$', views.men_shirt),
     url(r'^women-vneck$', views.women_vneck),
     url(r'^women-tshirt$', views.women_tshirt),
     url(r'^sunglass$', views.sunglass),
     url(r'^backpack$', views.backpack),
     url(r'^jacket$', views.jacket),
-=======
->>>>>>> c2b9c6ca0df6769dc7cd7d8989dc59ab4d57d293
+    url(r'^boots$', views.boots),
+    url(r'^shoes$', views.shoes),
+    url(r'^jewelry$', views.jewelry),
 ]

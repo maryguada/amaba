@@ -5,25 +5,15 @@ from .models import *
 #############################home###############################
 def index(request):
     return render(request,"projapp/home.html")
-<<<<<<< HEAD
 
 #############################login###############################
 def login(request): 
     return render(request, "projapp/login.html")
 
-=======
-#############################login###############################
-def login(request): 
-    return render(request, "projapp/login.html")
->>>>>>> c2b9c6ca0df6769dc7cd7d8989dc59ab4d57d293
 #############################logout###############################
 def logout(request):
     del request.session['user']
     return redirect("/")
-<<<<<<< HEAD
-
-=======
->>>>>>> c2b9c6ca0df6769dc7cd7d8989dc59ab4d57d293
 #############################login_process###############################
 def login_process(request):
         user = Account.objects.filter(email=request.POST['email'])
@@ -39,19 +29,12 @@ def login_process(request):
             print("No such username!")
             messages.warning(request,'Login failed.')
             return redirect ("/login")
-<<<<<<< HEAD
 
 #############################register###############################
 def register(request): 
     return render(request, "projapp/register.html")
 
 #############################register_process######################
-=======
-#############################register###############################
-def register(request): 
-    return render(request, "projapp/register.html")
-#############################register_process###############################
->>>>>>> c2b9c6ca0df6769dc7cd7d8989dc59ab4d57d293
 def register_process(request):
     if request.method=="POST":
         print("-"*80)
@@ -70,7 +53,6 @@ def register_process(request):
             request.session["user"]=new_user.id
             messages.success(request, "Successfully registered(or logged in)!")
             return redirect("/success")
-<<<<<<< HEAD
 
 #############################success###############################
 def success(request):
@@ -104,15 +86,14 @@ def backpack(request):
 def jacket(request): 
     return render(request, "projapp/jeanjacket.html")
 
-######################## boots ########
+######################## boots #########
+def boots(request): 
+    return render(request, "projapp/boots.html")
 
+######################## leather shoes ###### 
+def shoes(request): 
+    return render(request,"projapp/shoes.html" )
 
- 
-=======
-#############################success###############################
-def success(request):
-    return render(request,"projapp/success.html")
-#############################create_product###############################
-def create(request):
-    return redirect("/success")
->>>>>>> c2b9c6ca0df6769dc7cd7d8989dc59ab4d57d293
+######################## jewelry ############
+def jewelry(request): 
+    return render(request, "projapp/jewel.html")
